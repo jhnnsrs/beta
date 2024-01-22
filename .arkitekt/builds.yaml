@@ -1,6 +1,100 @@
 builds:
-- build_id: 2384bfa8-8536-47a6-9e69-18770a31b401
-  build_run: 46414d7c-e7af-4a4c-92bb-ed6ad76d6b44
+- build_id: 5fbeb298-e7f6-4e71-a53c-86f95fa5bb6a
+  build_run: b389f74c-4def-47a4-87f9-c28d0dc058ee
+  description: This is a vanilla flavour
+  flavour: cuda
+  inspection:
+    definitions:
+    - args:
+      - annotations: []
+        default: 10
+        description: The number of iterations, by default 10
+        key: n
+        kind: INT
+        label: n
+        nullable: true
+        scope: GLOBAL
+      - annotations: []
+        default: 2
+        description: The timeout, by default 2
+        key: timeout
+        kind: INT
+        label: timeout
+        nullable: true
+        scope: GLOBAL
+      collections: []
+      description: This function generates {{n}} strings with a {{timeout}} ms timeout
+        between each string
+      interfaces: []
+      kind: GENERATOR
+      name: Generate N Strings
+      portGroups: []
+      returns:
+      - annotations: []
+        description: A string with Hello {n}
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    - args:
+      - annotations: []
+        description: The input string
+        key: hello
+        kind: STRING
+        label: hello
+        nullable: false
+        scope: GLOBAL
+      collections: []
+      description: This function appends world to the input string
+      interfaces: []
+      kind: FUNCTION
+      name: Append World
+      portGroups: []
+      returns:
+      - annotations: []
+        description: '{{hello}} World'
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    - args:
+      - annotations: []
+        description: 'The input string
+
+
+          Returns'
+        key: input
+        kind: STRING
+        label: input
+        nullable: false
+        scope: GLOBAL
+      collections: []
+      description: 'This function prints the input string to
+
+        the console'
+      interfaces: []
+      kind: FUNCTION
+      name: Print String
+      portGroups: []
+      returns:
+      - annotations: []
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    size: 166349087
+  manifest:
+    author: jhnnsrs
+    entrypoint: app
+    identifier: beta
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+  selectors:
+  - type: cuda
+- build_id: b53c8935-7dee-48f0-8ab1-73996696961a
+  build_run: b389f74c-4def-47a4-87f9-c28d0dc058ee
   description: This is a vanilla flavour
   flavour: vanilla
   inspection:
@@ -82,7 +176,7 @@ builds:
         kind: STRING
         nullable: false
         scope: GLOBAL
-    size: 166348767
+    size: 166351381
   manifest:
     author: jhnnsrs
     entrypoint: app
@@ -92,4 +186,4 @@ builds:
     - read
     version: 0.0.1
   selectors: []
-latest_build_run: 46414d7c-e7af-4a4c-92bb-ed6ad76d6b44
+latest_build_run: b389f74c-4def-47a4-87f9-c28d0dc058ee

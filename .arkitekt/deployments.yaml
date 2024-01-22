@@ -1,10 +1,10 @@
 deployments:
-- build_id: 2384bfa8-8536-47a6-9e69-18770a31b401
-  deployed_at: '2024-01-22T16:13:10.969370'
-  deployment_id: f45f5513-35b5-41c2-bd68-d065116ae08f
-  deployment_run: 39a60a42-bd0d-4772-9746-959e3c67ce2e
-  flavour: vanilla
-  image: jhnnsrs/beta:0.0.1-vanilla
+- build_id: 5fbeb298-e7f6-4e71-a53c-86f95fa5bb6a
+  deployed_at: '2024-01-22T16:44:55.133365'
+  deployment_id: 167465d8-06ed-4a6c-ace3-ccd0f28f230d
+  deployment_run: 7e32b37d-b437-4abf-a615-a36c44348b8a
+  flavour: cuda
+  image: jhnnsrs/beta:0.0.1-cuda
   inspection:
     definitions:
     - args:
@@ -30,7 +30,7 @@ deployments:
       interfaces: []
       kind: GENERATOR
       name: Generate N Strings
-      port_groups: []
+      portGroups: []
       returns:
       - annotations: []
         description: A string with Hello {n}
@@ -51,7 +51,7 @@ deployments:
       interfaces: []
       kind: FUNCTION
       name: Append World
-      port_groups: []
+      portGroups: []
       returns:
       - annotations: []
         description: '{{hello}} World'
@@ -77,17 +77,117 @@ deployments:
       interfaces: []
       kind: FUNCTION
       name: Print String
-      port_groups: []
+      portGroups: []
       returns:
       - annotations: []
         key: return0
         kind: STRING
         nullable: false
         scope: GLOBAL
-    size: 166348767
+    size: 166349087
   manifest:
     author: jhnnsrs
-    created_at: '2024-01-22T16:12:53.258093'
+    created_at: '2024-01-22T16:44:47.651784'
+    entrypoint: app
+    identifier: beta
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+  selectors:
+  - compute_capability: '3.5'
+    cuda_version: '10.2'
+    required: true
+    type: cuda
+- build_id: b53c8935-7dee-48f0-8ab1-73996696961a
+  deployed_at: '2024-01-22T16:45:03.630152'
+  deployment_id: 277c6b2a-c66f-432f-bd58-1c44271cdfd0
+  deployment_run: fea9dae3-f9ca-4538-afcc-0794f81ddea2
+  flavour: vanilla
+  image: jhnnsrs/beta:0.0.1-cuda
+  inspection:
+    definitions:
+    - args:
+      - annotations: []
+        default: 10
+        description: The number of iterations, by default 10
+        key: n
+        kind: INT
+        label: n
+        nullable: true
+        scope: GLOBAL
+      - annotations: []
+        default: 2
+        description: The timeout, by default 2
+        key: timeout
+        kind: INT
+        label: timeout
+        nullable: true
+        scope: GLOBAL
+      collections: []
+      description: This function generates {{n}} strings with a {{timeout}} ms timeout
+        between each string
+      interfaces: []
+      kind: GENERATOR
+      name: Generate N Strings
+      portGroups: []
+      returns:
+      - annotations: []
+        description: A string with Hello {n}
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    - args:
+      - annotations: []
+        description: The input string
+        key: hello
+        kind: STRING
+        label: hello
+        nullable: false
+        scope: GLOBAL
+      collections: []
+      description: This function appends world to the input string
+      interfaces: []
+      kind: FUNCTION
+      name: Append World
+      portGroups: []
+      returns:
+      - annotations: []
+        description: '{{hello}} World'
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    - args:
+      - annotations: []
+        description: 'The input string
+
+
+          Returns'
+        key: input
+        kind: STRING
+        label: input
+        nullable: false
+        scope: GLOBAL
+      collections: []
+      description: 'This function prints the input string to
+
+        the console'
+      interfaces: []
+      kind: FUNCTION
+      name: Print String
+      portGroups: []
+      returns:
+      - annotations: []
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    size: 166351381
+  manifest:
+    author: jhnnsrs
+    created_at: '2024-01-22T16:44:47.652124'
     entrypoint: app
     identifier: beta
     requirements: []
@@ -95,4 +195,4 @@ deployments:
     - read
     version: 0.0.1
   selectors: []
-latest_deployment_run: 3115da51-607d-4fcc-86ee-22c9e57020eb
+latest_deployment_run: be94e94a-4050-40d2-90db-5e89568ab709
