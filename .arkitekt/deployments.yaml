@@ -1,0 +1,98 @@
+deployments:
+- build_id: 2384bfa8-8536-47a6-9e69-18770a31b401
+  deployed_at: '2024-01-22T16:13:10.969370'
+  deployment_id: f45f5513-35b5-41c2-bd68-d065116ae08f
+  deployment_run: 39a60a42-bd0d-4772-9746-959e3c67ce2e
+  flavour: vanilla
+  image: jhnnsrs/beta:0.0.1-vanilla
+  inspection:
+    definitions:
+    - args:
+      - annotations: []
+        default: 10
+        description: The number of iterations, by default 10
+        key: n
+        kind: INT
+        label: n
+        nullable: true
+        scope: GLOBAL
+      - annotations: []
+        default: 2
+        description: The timeout, by default 2
+        key: timeout
+        kind: INT
+        label: timeout
+        nullable: true
+        scope: GLOBAL
+      collections: []
+      description: This function generates {{n}} strings with a {{timeout}} ms timeout
+        between each string
+      interfaces: []
+      kind: GENERATOR
+      name: Generate N Strings
+      port_groups: []
+      returns:
+      - annotations: []
+        description: A string with Hello {n}
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    - args:
+      - annotations: []
+        description: The input string
+        key: hello
+        kind: STRING
+        label: hello
+        nullable: false
+        scope: GLOBAL
+      collections: []
+      description: This function appends world to the input string
+      interfaces: []
+      kind: FUNCTION
+      name: Append World
+      port_groups: []
+      returns:
+      - annotations: []
+        description: '{{hello}} World'
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    - args:
+      - annotations: []
+        description: 'The input string
+
+
+          Returns'
+        key: input
+        kind: STRING
+        label: input
+        nullable: false
+        scope: GLOBAL
+      collections: []
+      description: 'This function prints the input string to
+
+        the console'
+      interfaces: []
+      kind: FUNCTION
+      name: Print String
+      port_groups: []
+      returns:
+      - annotations: []
+        key: return0
+        kind: STRING
+        nullable: false
+        scope: GLOBAL
+    size: 166348767
+  manifest:
+    author: jhnnsrs
+    created_at: '2024-01-22T16:12:53.258093'
+    entrypoint: app
+    identifier: beta
+    requirements: []
+    scopes:
+    - read
+    version: 0.0.1
+  selectors: []
+latest_deployment_run: 3115da51-607d-4fcc-86ee-22c9e57020eb
